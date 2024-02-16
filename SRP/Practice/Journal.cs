@@ -21,18 +21,18 @@ public class Journal
         return string.Join(Environment.NewLine, _entries);
     }
 
-    public void Save(string fileName)
-    {
-        File.WriteAllText(fileName, ToString);
-    }
+    //public void Save(string fileName)
+    //{
+    //    File.WriteAllText(fileName, ToString);
+    //}
 
-    public static Journal Load(string fileName)
-    {
-        //TODO
-    }
+    //public static Journal Load(string fileName)
+    //{
+    //    //TODO
+    //}
 
-    public void Load(Uri uri)
-    {
-        //TODO
-    }
+    //public void Load(Uri uri)
+    //{
+    //    //TODO
+    //}
 }
