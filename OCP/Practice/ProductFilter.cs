@@ -25,4 +25,16 @@ public class ProductFilter
             }
         }
     }
+
+    // Voilation of Open Closed Principles, Classes open for extension and closed for modification such FilterBySizeAndColor Modification
+    public IEnumerable<Product> FilterBySizeAndColor(IEnumerable<Product> products, Size size, Color color)
+    {
+        foreach (var product in products)
+        {
+            if(product.Size == size && product.Color == color)
+            {
+                yield return product;
+            }
+        }
+    }
 }
