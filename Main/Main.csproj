@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OCP\OCP.csproj" />
     <ProjectReference Include="..\SRP\SRP.csproj" />
   </ItemGroup>
 
