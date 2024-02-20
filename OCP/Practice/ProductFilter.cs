@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
+﻿using OCP.Practice.Enums;
 
 namespace OCP.Practice;
 
