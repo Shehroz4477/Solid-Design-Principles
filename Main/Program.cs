@@ -23,8 +23,22 @@ var headPhone = new Product("Head Phone", Color.Blue, Size.Small);
 
 Product[] products = {laptop, lcd, headPhone};
 
+Console.WriteLine("Old Filter Example");
 var productFilter = new ProductFilter();
 foreach (var product in productFilter.FilterByColor(products, Color.Blue))
+{
+    Console.WriteLine($"- {product.Name} is {product.Color}");
+}
+
+Console.WriteLine("Voilation Filter Example");
+foreach (var product in productFilter.FilterBySizeAndColor(products, Size.Small, Color.Blue))
+{
+    Console.WriteLine($"- {product.Name} is {product.Color}");
+}
+
+Console.WriteLine("Batter Filter Example");
+var batterFilter = new BatterFilter();
+foreach (var product in batterFilter.Filter(products, new ColorSpecification(Color.Blue)))
 {
     Console.WriteLine($"- {product.Name} is {product.Color}");
 }
