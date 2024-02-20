@@ -1,6 +1,6 @@
 ﻿namespace OCP.Practice.Enums;
 
-internal enum Size
+public enum Size
 {
     Small,
     Meduim,

@@ -1,6 +1,6 @@
 ﻿namespace OCP.Practice.Enums;
 
-internal enum Color
+public enum Color
 {
     Red,
     Green,
