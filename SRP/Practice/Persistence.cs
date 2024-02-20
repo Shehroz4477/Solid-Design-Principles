@@ -2,7 +2,7 @@
 
 public class Persistence
 {
-    public void Load(Journal entity, string fileName, bool isOverWrite = false)
+    public void SaveToFile(Journal entity, string fileName, bool isOverWrite = false)
     {
         if (isOverWrite || !File.Exists(fileName))
         {
