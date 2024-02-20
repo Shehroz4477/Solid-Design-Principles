@@ -22,9 +22,10 @@ var lcd = new Product("LCD Screen", Color.Blue, Size.Large);
 var headPhone = new Product("Head Phone", Color.Blue, Size.Small);
 
 Product[] products = {laptop, lcd, headPhone};
+var productFilter = new ProductFilter();
+var batterFilter = new BatterFilter();
 
 Console.WriteLine("Old Filter Example");
-var productFilter = new ProductFilter();
 foreach (var product in productFilter.FilterByColor(products, Color.Blue))
 {
     Console.WriteLine($"- {product.Name} is {product.Color}");
@@ -36,9 +37,19 @@ foreach (var product in productFilter.FilterBySizeAndColor(products, Size.Small,
     Console.WriteLine($"- {product.Name} is {product.Color}");
 }
 
-Console.WriteLine("Batter Filter Example");
-var batterFilter = new BatterFilter();
+Console.WriteLine("Batter Filter(Color) Example");
 foreach (var product in batterFilter.Filter(products, new ColorSpecification(Color.Blue)))
+{
+    Console.WriteLine($"- {product.Name} is {product.Color}");
+}
+
+Console.WriteLine("Batter Filter(Size,Color) Example");
+foreach (var product in batterFilter.Filter(
+    products,
+    new AndSpecification<Product>(
+        new ColorSpecification(Color.Blue), 
+        new SizeSpecification(Size.Small)
+    )))
 {
     Console.WriteLine($"- {product.Name} is {product.Color}");
 }
